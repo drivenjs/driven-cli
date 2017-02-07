@@ -4,30 +4,19 @@ const program = require('commander')
 const chalk = require('chalk')
 const fs = require('fs-sync')
 const drivenTest = require('driven-test')
+const {loadTests, getTestFiles} = require('./helpers.js')
 
 program
   .version('0.0.1')
   .option('-f, --file [url]', 'File or wildcard')
   .parse(process.argv)
 
-program.file = program.file || path.join('**', 'test_*')
-
-if(!path.isAbsolute(program.file)) {
-  program.file = path.join(process.cwd(), program.file)
-}
-
-function openFiles(files) {
-  files
-    .filter((file) => file.indexOf('node_modules') === -1)
-    .forEach((file) => require(`${file}`))
-
-  drivenTest.runner.run()
-}
-
-files = fs.expand(program.file)
+const wildcard = program.file || path.join('**', 'test_*')
+const files = getTestFiles(wildcards)
 
 if (files.length == 0) {
   console.log(`No test files at ${program.file}`)
 }
 
-openFiles(files)
+loadTests(files)
+drivenTest.runner.run()

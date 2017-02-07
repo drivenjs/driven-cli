@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Drivenjs client",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "driven-cli test"  
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/drivenjs/driven-cli.git"
