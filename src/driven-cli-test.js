@@ -12,7 +12,7 @@ program
   .parse(process.argv)
 
 const wildcard = program.file || path.join('**', 'test_*')
-const files = getTestFiles(wildcards)
+const files = getTestFiles(wildcard)
 
 if (files.length == 0) {
   console.log(`No test files at ${program.file}`)
