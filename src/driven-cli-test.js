@@ -17,10 +17,9 @@ if(!path.isAbsolute(program.file)) {
 }
 
 function openFiles(files) {
-  files.forEach((file) => {
-    console.log(file)
-    require(`${file}`)
-  })
+  files
+    .filter((file) => file.indexOf('node_modules') === -1)
+    .forEach((file) => require(`${file}`))
 
   drivenTest.runner.run()
 }
