@@ -4,7 +4,7 @@ const fs = require('fs-sync')
 
 const loadTests = (files) => files.forEach(require)
 
-const getTestFiles = (widcard) => {
+const getTestFiles = (wildcard) => {
   if(!path.isAbsolute(wildcard)) {
     wildcard = path.join(process.cwd(), wildcard)
   }
