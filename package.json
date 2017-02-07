@@ -1,0 +1,25 @@
+{
+  "name": "driven-cli",
+  "version": "0.0.1",
+  "description": "Drivenjs client",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drivenjs/driven-cli.git"
+  },
+  "author": "drivenjs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drivenjs/driven-cli/issues"
+  },
+  "homepage": "https://github.com/drivenjs/driven-cli#readme",
+  "bin": {
+    "driven-cli": "./src/driven-cli.js"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "driven-test": "git+https://github.com/drivenjs/driven-test.git#clean-repository"
+  }
+}
